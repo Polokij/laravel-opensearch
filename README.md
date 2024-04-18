@@ -5,6 +5,9 @@
 This package extends Laravel's Eloquent model and query builder with seamless integration of Elasticsearch functionalities. Designed to feel native to Laravel, this plugin enables you to work with Eloquent models while leveraging the
 powerful search and analytics capabilities of Elasticsearch.
 
+
+forked from [pdphilip/laravel-elasticsearch](https://github.com/pdphilip/laravel-elasticsearch) 
+
 ### Read the [Documentation](https://elasticsearch.pdphilip.com/)
 
 ---
@@ -20,29 +23,6 @@ Please note: Only **version 3** of the package will be maintained.
 ```bash
 composer require pdphilip/elasticsearch
 ```
-
-| Laravel Version | Command                                          | Maintained |
-|-----------------|--------------------------------------------------|------------|
-| Laravel 11.x    | `composer require pdphilip/elasticsearch `       | ✅          |
-| Laravel 10.x    | `composer require pdphilip/elasticsearch:~3.10 ` | ✅          |
-| Laravel 9.x     | `composer require pdphilip/elasticsearch:~3.9`   | ✅          |
-| Laravel 8.x     | `composer require pdphilip/elasticsearch:~3.8`   | ✅          |
-
-### Unmaintained versions (Elasticsearch 8.x):
-
-| Laravel Version   | Command                                        | Maintained |
-|-------------------|------------------------------------------------|------------|
-| Laravel 7.x       | `composer require pdphilip/elasticsearch:~2.7` | ❌          |
-| Laravel 6.x (5.8) | `composer require pdphilip/elasticsearch:~2.6` | ❌          |
-
-### Unmaintained versions (Elasticsearch 7.x):
-
-| Laravel Version   | Command                                        | Maintained |
-|-------------------|------------------------------------------------|------------|
-| Laravel 9.x       | `composer require pdphilip/elasticsearch:~1.9` | ❌          |
-| Laravel 8.x       | `composer require pdphilip/elasticsearch:~1.8` | ❌          |
-| Laravel 7.x       | `composer require pdphilip/elasticsearch:~1.7` | ❌          |
-| Laravel 6.x (5.8) | `composer require pdphilip/elasticsearch:~1.6` | ❌          |
 
 Next, [Configuration](https://elasticsearch.pdphilip.com/#configuration)
 
