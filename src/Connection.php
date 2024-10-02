@@ -157,31 +157,29 @@ class Connection extends BaseConnection
         return $this->{'_'.$type.'Connection'}();
         
     }
-    
+
     protected function _httpConnection(): Client
     {
         $hosts = $this->config['hosts'] ?? null;
         $username = $this->config['username'] ?? null;
         $pass = $this->config['password'] ?? null;
         $certPath = $this->config['ssl_cert'] ?? null;
-        
+
         $cb = ClientBuilder::create()->setHosts($hosts);
 
         if ($this->config['curl_options'] ?? false) {
             $curlOptions = $this->config['curl_options'];
-            
+
             if ($username && $pass) {
-                $curlOptions += [
+                $curlOptions['curl'] = ($curlOptions['curl'] ?? []) + [
                     CURLOPT_HTTPAUTH => CURLAUTH_BASIC,
                     CURLOPT_USERPWD  => $username.':'.$pass
                 ];
             }
-            
+
             $cb->setConnectionParams([
-                'client' => [
-                    'curl' => $curlOptions
-                ]
-            ]);    
+                'client' => $curlOptions
+            ]);
         } else {
             if ($username && $pass) {
                 $cb->setBasicAuthentication($username, $pass)->build();

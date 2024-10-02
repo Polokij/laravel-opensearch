@@ -24,7 +24,8 @@
     "illuminate/container": "^8.12|^9.0|^10.0|^11.0",
     "illuminate/database": "^8.12|^9.0|^10.0|^11.0",
     "illuminate/events": "^8.12|^9.0|^10.0|^11.0",
-    "opensearch-project/opensearch-php": "^2.2"
+    "opensearch-project/opensearch-php": "^2.3",
+    "ext-curl": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "^10.3",
@@ -47,6 +48,11 @@
       "providers": [
         "PDPhilip\\Elasticsearch\\ElasticServiceProvider"
       ]
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": false
     }
   }
 }
