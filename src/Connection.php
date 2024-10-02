@@ -178,14 +178,14 @@ class Connection extends BaseConnection
             $curlOptions = $this->config['curl_options'];
 
             if ($username && $pass) {
-                $curlOptions['curl'] = ($curlOptions['curl'] ?? []) + [
+                $curlOptions += [
                     CURLOPT_HTTPAUTH => CURLAUTH_BASIC,
                     CURLOPT_USERPWD  => $username.':'.$pass
                 ];
             }
 
             $cb->setConnectionParams([
-                'client' => $curlOptions
+                'client' => ["curl" => $curlOptions]
             ]);
         } else {
             if ($username && $pass) {
@@ -200,7 +200,8 @@ class Connection extends BaseConnection
         }
         return $cb->build();
     }
-    
+
+
     protected function _cloudConnection(): Client
     {
         $cloudId = $this->config['cloud_id'] ?? null;
