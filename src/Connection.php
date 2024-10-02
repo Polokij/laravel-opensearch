@@ -139,7 +139,14 @@ class Connection extends BaseConnection
     {
         return new Schema\Grammar();
     }
-    
+
+    /**
+     * @return Client
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
     
     //----------------------------------------------------------------------
     // Connection Builder
